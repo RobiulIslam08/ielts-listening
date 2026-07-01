@@ -6,6 +6,7 @@ import Part1 from "../components/exam/Part1";
 import Part2 from "../components/exam/Part2";
 import Part3 from "../components/exam/Part3";
 import Part4 from "../components/exam/Part4";
+import AudioOverlay from "../components/exam/AudioOverlay";
 
 const GROUPS = [
   [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]],
@@ -46,10 +47,12 @@ const PARTS = [
 ];
 
 const HomePage = () => {
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [activePart, setActivePart] = useState(0);
   const [answers, setAnswers] = useState({}); // Fresh clean state
   const [currentQ, setCurrentQ] = useState(1);
   const qRefs = useRef({});
+  const audioRef = useRef(null);
 
   const setAnswer = (key, value) => {
     setAnswers((prev) => ({ ...prev, [key]: value }));
@@ -107,8 +110,21 @@ const HomePage = () => {
 
   const ActiveComponent = PARTS[activePart].Component;
 
+  const handlePlayAudio = () => {
+    setIsAudioPlaying(true);
+    if (audioRef.current) {
+      audioRef.current.play().catch((err) => console.error("Audio playback failed:", err));
+    }
+  };
+
   return (
     <div className="h-screen overflow-hidden flex flex-col bg-white text-[#111]">
+      <audio 
+        ref={audioRef} 
+        src="" 
+        preload="auto" 
+      />
+      {!isAudioPlaying && <AudioOverlay onPlay={handlePlayAudio} />}
       <ExamHeader />
       <main className="flex-1 min-h-0 flex flex-col">
         {/* Main Content Area */}
