@@ -111,10 +111,9 @@ const HomePage = () => {
     <div className="h-screen overflow-hidden flex flex-col bg-white text-[#111]">
       <ExamHeader />
       <main className="flex-1 min-h-0 flex flex-col">
-        <PartBanner title={PARTS[activePart].title} intro={PARTS[activePart].intro} />
-        
         {/* Main Content Area */}
         <div className="flex-1 min-h-0 overflow-y-auto pb-12">
+          <PartBanner title={PARTS[activePart].title} intro={PARTS[activePart].intro} />
           <ActiveComponent
             answers={answers}
             setAnswer={setAnswer}

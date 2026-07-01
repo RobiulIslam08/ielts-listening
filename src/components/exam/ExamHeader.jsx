@@ -4,20 +4,19 @@ import { FaVolumeHigh } from "react-icons/fa6";
 
 export default function ExamHeader() {
   return (
-    <header className="flex items-center justify-between px-6 py-2 shrink-0 border-b border-gray-300 bg-white h-[60px]">
+    <header className="flex items-center justify-between px-4 py-2 shrink-0 border-b border-gray-300 bg-white h-[60px]">
       <div className="flex items-center gap-4 h-full">
         <div className="flex items-center font-black h-full">
           <img className="w-20 object-contain md:w-[96px] mr-2" src="/ielts.svg" alt="IELTS" />
         </div>
         
-        {/* Divider line */}
-        <div className="h-8 w-px bg-gray-300 mx-2"></div>
+  
 
         <div className="flex flex-col justify-center text-black">
-          <span className="text-[15px] font-bold leading-tight">Test taker ID</span>
-          <div className="flex items-center gap-1.5 text-gray-700 mt-0.5">
+          <span className="text-[17px] font-semibold leading-tight">Test taker ID</span>
+          <div className="flex items-center gap-1.5  mt-0.5">
             <FaVolumeHigh className="h-3 w-3" />
-            <span className="text-[11px] font-semibold">Audio is Playing</span>
+            <span className="text-[14px] font-black font-semibold">Audio is Playing</span>
           </div>
         </div>
       </div>

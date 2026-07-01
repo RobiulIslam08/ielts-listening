@@ -121,10 +121,10 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
       
       {/* ----------------- Q11-15 ----------------- */}
       <div className="mb-16">
-        <div className="flex justify-between items-start mb-6">
+        <div className="flex justify-between items-start mb-10">
           <div>
             <h2 className="font-bold text-[16px] mb-1">Questions 11–15</h2>
-            <p className="text-[14px] ">Who is responsible for each area? Choose the correct answer for each person and move it into the gap.</p>
+            <p className="text-[17px] ">Who is responsible for each area? Choose the correct answer for each person and move it into the gap.</p>
           </div>
           <button className="flex items-center gap-1 text-[13px] text-[#1a5fb4] hover:underline font-semibold mt-1">
             <Keyboard className="w-4 h-4" />
@@ -137,7 +137,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
           
           {/* People list column */}
           <div className="flex flex-col gap-4">
-            <div className="font-bold text-[15px] mb-1">People</div>
+            <div className="font-bold text-[17px] mb-1">People</div>
             {people.map((person) => {
               const assignedVal = answers[String(person.id)];
               const isFocused = currentQ === person.id;
@@ -147,7 +147,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                   key={person.id}
                   className="flex items-center gap-2 h-[32px]"
                 >
-                  <span className=" text-[14px] ">{person.name}</span>
+                  <span className=" text-[17px] text-black">{person.name}</span>
                   
                   {/* Drop Slot */}
                   <div
@@ -159,12 +159,12 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                     onDrop={(e) => handleDrop(e, person.id)}
                     draggable={!!assignedVal}
                     onDragStart={(e) => assignedVal && handleDragStart(e, assignedVal)}
-                    className={`h-[24px] w-[120px] rounded-md transition-all flex items-center justify-center cursor-pointer text-[13px] whitespace-nowrap ${
+                    className={`h-[24px] w-[120px] rounded-md transition-all flex items-center justify-center cursor-pointer text-[17px] whitespace-nowrap ${
                       assignedVal
-                        ? "border-2 border-[#1a5fb4] bg-white text-[#1a5fb4] font-semibold px-2 cursor-grab active:cursor-grabbing"
+                        ? "border-2 border-[#1a5fb4] bg-white   px-2 cursor-grab active:cursor-grabbing"
                         : `border border-dashed bg-white ${
                             isFocused 
-                              ? "border-2 border-dashed border-[#1a5fb4] text-[#1a5fb4]" 
+                              ? "border-2 border-dashed border-[#1a5fb4]" 
                               : "border-gray-500 text-gray-800 font-bold"
                           }`
                     }`}
@@ -182,7 +182,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
             onDragOver={handleDragOver}
             onDrop={handleDropToPool}
           >
-            <div className="font-bold text-[15px] mb-1">Staff Responsibilities</div>
+            <div className="font-semibold text-[17px] mb-1">Staff Responsibilities</div>
             <div className="flex flex-col gap-2 w-[180px]">
               {poolOptions1.map((opt) => {
                 const placed = isOptionPlaced(opt);
@@ -194,7 +194,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                     draggable={!placed}
                     onDragStart={(e) => handleDragStart(e, opt)}
                     onClick={() => !placed && handleOptionClick(opt)}
-                    className={`px-2.5 py-0.2 border text-[13px] rounded-[4px] select-none transition-all w-fit ${
+                    className={`px-2.5 py-0.2 border border-gray-600 text-[14px] rounded-[4px] select-none transition-all w-fit ${
                       placed
                         ? "bg-gray-100 border-gray-200 cursor-not-allowed opacity-0"
                         : isSelected
@@ -218,7 +218,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
         <div className="flex justify-between items-start mb-6">
           <div>
             <h2 className="font-bold text-[16px] mb-1">Questions 16–20</h2>
-            <p className="text-[14px] ">Label the map. Choose the correct answer and move it into the gap.</p>
+            <p className="text-[17px] ">Label the map. Choose the correct answer and move it into the gap.</p>
           </div>
           <button className="flex items-center gap-1 text-[13px] text-[#1a5fb4] hover:underline font-semibold mt-1">
             <Keyboard className="w-4 h-4" />
@@ -227,7 +227,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
         </div>
 
         {/* Layout Grid */}
-        <div className="flex gap-20 items-start pl-2">
+        <div className="flex gap-10 items-start pl-2">
           
           {/* Map Image container without border or background wrapper */}
           <div className="relative w-full max-w-[700px] aspect-[4/3] select-none">
@@ -260,9 +260,9 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                     width: slot.width,
                     height: slot.height,
                   }}
-                  className={`rounded-md transition-all flex items-center justify-center cursor-pointer text-[13px] shadow-xs whitespace-nowrap ${
+                  className={`rounded-md transition-all flex items-center justify-center cursor-pointer text-[13px] text-black shadow-xs whitespace-nowrap ${
                     assignedVal
-                      ? "border-2 border-[#1a5fb4] bg-white text-[#1a5fb4] font-bold px-2 cursor-grab active:cursor-grabbing"
+                      ? "border-2 border-[#1a5fb4] bg-white font-bold px-2 cursor-grab active:cursor-grabbing"
                       : `border border-dashed bg-white/95 ${
                           isFocused 
                             ? "border-2 border-dashed border-[#1a5fb4] text-[#1a5fb4]" 
@@ -294,10 +294,10 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                   onClick={() => !placed && handleOptionClick(opt)}
                   className={`px-2.5 py-1 border text-[13px] rounded-[4px] select-none transition-all w-fit ${
                     placed
-                      ? "bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed opacity-40"
+                      ? "bg-gray-100 border-gray-100 text-gray-100 cursor-not-allowed opacity-40"
                       : isSelected
                       ? "bg-[#e3effd] border-[#1a5fb4]  cursor-grab font-semibold"
-                      : "bg-white border-gray-400 text-black hover:bg-gray-50 cursor-grab active:cursor-grabbing"
+                      : "bg-white border-gray-800 text-black hover:bg-gray-50 cursor-grab active:cursor-grabbing"
                   }`}
                 >
                   {opt}

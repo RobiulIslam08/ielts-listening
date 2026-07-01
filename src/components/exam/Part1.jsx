@@ -13,24 +13,24 @@ export default function Part1({ answers, setAnswer, currentQ, setCurrentQ, qRefs
 
   return (
     <div className="mx-auto w-full  px-4 text-[15px] text-black pb-20">
-      <div className="mb-6">
-        <h2 className="font-bold text-[16px] mb-1">Questions 1–10</h2>
-        <p>Complete the notes. Write <span className="font-bold">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
+      <div className="mb-5">
+        <h2 className="font-bold text-[16px] mb-0">Questions 1–10</h2>
+        <p className="text-[17px]">Complete the notes. Write <span className="font-bold">ONE WORD AND/OR A NUMBER</span> for each answer.</p>
       </div>
 
-      <h3 className="font-bold text-[16px] mb-6">Phone call about second-hand furniture</h3>
+      <h3 className="font-bold text-[19px] mb-6">Phone call about second-hand furniture</h3>
 
       <div className="mb-8">
-        <div className="font-bold mb-4">Items:</div>
+        <div className="font-bold mb-4 text-[17px]">Items:</div>
         
-        <div className="grid grid-cols-[140px_1fr] gap-x-2 gap-y-6">
+        <div className="grid grid-cols-[140px_1fr] gap-x-0 gap-y-6 text-[17px] text-black">
           {/* Row 1 */}
-          <div>Dining table:</div>
+          <div className="">Dining table:</div>
           <div className="space-y-4">
             <div className="flex items-center">
-              <span className="mr-2">-</span>
+              <span className="mr-2 ">-</span>
               <NumberedInput {...iprops(1)} />
-              <span className="ml-2">shape</span>
+              <span className="ml-2 ">shape</span>
             </div>
             <div>- medium size</div>
             <div className="flex items-center">
@@ -84,17 +84,17 @@ export default function Part1({ answers, setAnswer, currentQ, setCurrentQ, qRefs
         </div>
       </div>
 
-      <div className="mb-8">
+      <div className="mb-8 text-[17px] text-black">
         <div className="font-bold mb-4">Address:</div>
-        <div className="flex items-center flex-wrap gap-y-2 ml-10">
+        <div className="flex items-center flex-wrap gap-y-2 ml-28">
           <NumberedInput {...iprops(8)} />
           <span className="ml-2">Old Lane, Stonethorpe</span>
         </div>
       </div>
 
       <div>
-        <div className="font-bold mb-4">Directions:</div>
-        <div className="ml-10 leading-relaxed max-w-4xl">
+        <div className="font-bold mb-4 text-[17px] text-black">Directions:</div>
+        <div className="ml-28 leading-relaxed max-w-4xl text-[17px] text-black">
           Take the Hawcroft road out of Stonethorpe. Go past the secondary school, then turn 
           <NumberedInput {...iprops(9)} /> 
           at the crossroads. House is down this road, opposite the 
