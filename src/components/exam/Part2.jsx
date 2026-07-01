@@ -28,11 +28,11 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
 
   // Q16-20: Map Slots (Coordinates adjusted to match the SVG floorplan precisely)
   const mapSlots = [
-    { id: 18, label: "18", top: "10.4%", left: "22.2%", width: "135px", height: "28px" },
-    { id: 19, label: "19", top: "27.1%", left: "47.2%", width: "135px", height: "28px" },
-    { id: 16, label: "16", top: "45.8%", left: "30.8%", width: "135px", height: "28px" },
-    { id: 20, label: "20", top: "58.3%", left: "47.2%", width: "135px", height: "28px" },
-    { id: 17, label: "17", top: "58.3%", left: "10.5%", width: "135px", height: "28px" },
+    { id: 18, label: "18", top: "5.4%", left: "22.2%", width: "135px", height: "28px" },
+    { id: 19, label: "19", top: "10.1%", left: "48.2%", width: "135px", height: "28px" },
+    { id: 16, label: "16", top: "35.8%", left: "30.8%", width: "135px", height: "28px" },
+    { id: 20, label: "20", top: "48.3%", left: "47.2%", width: "135px", height: "28px" },
+    { id: 17, label: "17", top: "48.3%", left: "10.5%", width: "135px", height: "28px" },
   ];
 
   const poolOptions2 = [
@@ -117,14 +117,14 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
   };
 
   return (
-    <div className="mx-auto w-full max-w-[1000px] px-6 text-[15px] text-black pb-32 font-sans select-none">
+    <div className="mx-auto w-full  px-4 text-[15px] text-black pb-32 font-sans select-none">
       
       {/* ----------------- Q11-15 ----------------- */}
       <div className="mb-16">
         <div className="flex justify-between items-start mb-6">
           <div>
             <h2 className="font-bold text-[16px] mb-1">Questions 11–15</h2>
-            <p className="text-[14px] text-gray-800">Who is responsible for each area? Choose the correct answer for each person and move it into the gap.</p>
+            <p className="text-[14px] ">Who is responsible for each area? Choose the correct answer for each person and move it into the gap.</p>
           </div>
           <button className="flex items-center gap-1 text-[13px] text-[#1a5fb4] hover:underline font-semibold mt-1">
             <Keyboard className="w-4 h-4" />
@@ -133,7 +133,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
         </div>
 
         {/* Layout Grid */}
-        <div className="flex gap-20 items-start pl-2">
+        <div className="flex gap-8 items-start">
           
           {/* People list column */}
           <div className="flex flex-col gap-4">
@@ -145,9 +145,9 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
               return (
                 <div 
                   key={person.id}
-                  className="flex items-center gap-4 h-[30px]"
+                  className="flex items-center gap-2 h-[32px]"
                 >
-                  <span className="w-[100px] text-[14px] text-gray-900">{person.name}</span>
+                  <span className=" text-[14px] ">{person.name}</span>
                   
                   {/* Drop Slot */}
                   <div
@@ -159,7 +159,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                     onDrop={(e) => handleDrop(e, person.id)}
                     draggable={!!assignedVal}
                     onDragStart={(e) => assignedVal && handleDragStart(e, assignedVal)}
-                    className={`h-[28px] w-[140px] rounded-md transition-all flex items-center justify-center cursor-pointer text-[13px] whitespace-nowrap ${
+                    className={`h-[24px] w-[120px] rounded-md transition-all flex items-center justify-center cursor-pointer text-[13px] whitespace-nowrap ${
                       assignedVal
                         ? "border-2 border-[#1a5fb4] bg-white text-[#1a5fb4] font-semibold px-2 cursor-grab active:cursor-grabbing"
                         : `border border-dashed bg-white ${
@@ -194,12 +194,12 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                     draggable={!placed}
                     onDragStart={(e) => handleDragStart(e, opt)}
                     onClick={() => !placed && handleOptionClick(opt)}
-                    className={`px-2.5 py-1 border text-[13px] rounded-[4px] select-none transition-all w-fit ${
+                    className={`px-2.5 py-0.2 border text-[13px] rounded-[4px] select-none transition-all w-fit ${
                       placed
-                        ? "bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed opacity-40"
+                        ? "bg-gray-100 border-gray-200 cursor-not-allowed opacity-0"
                         : isSelected
-                        ? "bg-[#e3effd] border-[#1a5fb4] text-[#1a5fb4] cursor-grab font-semibold"
-                        : "bg-white border-gray-400 text-black hover:bg-gray-50 cursor-grab active:cursor-grabbing"
+                        ? "bg-[#e3effd] border  cursor-grab font-semibold"
+                        : "bg-white  text-black hover:bg-gray-50 cursor-grab active:cursor-grabbing"
                     }`}
                   >
                     {opt}
@@ -214,11 +214,11 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
 
 
       {/* ----------------- Q16-20 ----------------- */}
-      <div className="border-t border-gray-200 pt-12">
+      <div className=" pt-12">
         <div className="flex justify-between items-start mb-6">
           <div>
             <h2 className="font-bold text-[16px] mb-1">Questions 16–20</h2>
-            <p className="text-[14px] text-gray-800">Label the map. Choose the correct answer and move it into the gap.</p>
+            <p className="text-[14px] ">Label the map. Choose the correct answer and move it into the gap.</p>
           </div>
           <button className="flex items-center gap-1 text-[13px] text-[#1a5fb4] hover:underline font-semibold mt-1">
             <Keyboard className="w-4 h-4" />
@@ -230,7 +230,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
         <div className="flex gap-20 items-start pl-2">
           
           {/* Map Image container without border or background wrapper */}
-          <div className="relative w-full max-w-[500px] aspect-[4/3] select-none">
+          <div className="relative w-full max-w-[700px] aspect-[4/3] select-none">
             <img 
               src="/map.svg" 
               alt="Map Layout"
@@ -296,7 +296,7 @@ export default function Part2({ answers, setAnswer, currentQ, setCurrentQ, qRefs
                     placed
                       ? "bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed opacity-40"
                       : isSelected
-                      ? "bg-[#e3effd] border-[#1a5fb4] text-[#1a5fb4] cursor-grab font-semibold"
+                      ? "bg-[#e3effd] border-[#1a5fb4]  cursor-grab font-semibold"
                       : "bg-white border-gray-400 text-black hover:bg-gray-50 cursor-grab active:cursor-grabbing"
                   }`}
                 >
